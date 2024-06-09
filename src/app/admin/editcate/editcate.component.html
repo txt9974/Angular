@@ -1,0 +1,29 @@
+<p>Edit category</p>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+  <input
+    class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+    type="text"
+    placeholder="Title"
+    formControlName="title"
+  />
+  <div
+    *ngIf="
+      categoryForm['controls']['title'].dirty &&
+      categoryForm['controls']['title'].errors
+    "
+  >
+    <small
+      class="text-red-600 font-medium text-sm"
+      *ngIf="categoryForm['controls']['title'].errors['required']"
+      >Tên không để trống</small
+    >
+  </div>
+  <button
+    class="bg-blue-600 w-[184px] h-9 rounded-[6px] text-white font-medium"
+    (click)="refresh()"
+    [disabled]="categoryForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>

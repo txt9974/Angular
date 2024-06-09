@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="ml-[550px] mb-5">
+  <h1 class="font-bold text-4xl">Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input
+        class="rounded-[5px] mb-2 focus:outline-none h-9 w-[50%] bg-yellow-500"
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <div
+        *ngIf="
+          loginForm['controls']['email'].dirty &&
+          loginForm['controls']['email'].errors
+        "
+      >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="loginForm['controls']['email'].errors['email']"
+          >Email phải đúng định dạng
+        </small>
+      </div>
+    </div>
+    <div>
+      <input
+        class="rounded-[5px] mb-2 focus:outline-none h-9 w-[50%] bg-yellow-500"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        *ngIf="
+          loginForm['controls']['password'].dirty &&
+          loginForm['controls']['password'].errors
+        "
+      >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="loginForm['controls']['password'].errors['minlength']"
+          >Password không nhỏ hơn 8 ký tự
+        </small>
+      </div>
+    </div>
+
+    <button
+      class="bg-blue-600 w-[50.5%] h-9 rounded-[6px] text-white font-medium"
+      [disabled]="loginForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

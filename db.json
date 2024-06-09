@@ -1,0 +1,133 @@
+{
+  "product": [
+    {
+      "title": "Iphone 6",
+      "price": 100,
+      "description": "mota ",
+      "category": "Iphone",
+      "id": 1
+    },
+    {
+      "title": "Iphone 8",
+      "price": 150,
+      "description": "mota1",
+      "category": "Iphone",
+      "id": 2
+    },
+    {
+      "title": "Redmi note 13",
+      "price": 1000,
+      "description": "mota2",
+      "category": "Redmi",
+      "img": "https://cdn2.cellphones.com.vn/x/media/catalog/product/x/i/xiaomi-redmi-note-13_7__1_3.png",
+      "id": 3
+    },
+    {
+      "title": "Sony vip pro",
+      "price": 1002,
+      "description": "motaa",
+      "category": "Sony",
+      "id": 4
+    },
+    {
+      "title": "Redmi note 13",
+      "price": 100,
+      "description": "redmi",
+      "category": "Redmi",
+      "img": "",
+      "id": 5
+    },
+    {
+      "title": "sdasddsa",
+      "price": 123,
+      "description": "dasdasd",
+      "category": "Xiaomi",
+      "img": "",
+      "id": 6
+    },
+    {
+      "title": "adsbdkjasd",
+      "price": 12367,
+      "description": "aldhflasdjf",
+      "category": "Redmi",
+      "img": "https://cdn2.cellphones.com.vn/x/media/catalog/product/x/i/xiaomi-redmi-note-13_7__1_3.png",
+      "id": 7
+    },
+    {
+      "title": "vzxcvzcxv",
+      "price": 123123,
+      "description": "afsdfadsfadf",
+      "category": "1",
+      "img": "adfadf",
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "email": "sucvat3344@gmail.com",
+      "password": "$2a$10$GjB8cuXVG/Q5Dw7pyoFSn.uP6fl4qYBGlh6DTf9FJcgaZ0Sqwx7G6",
+      "name": "sdasdasd",
+      "id": 1
+    },
+    {
+      "email": "sucvat3355@gmail.com",
+      "password": "$2a$10$L0leZH2thGuyDak7qshuaumz19CJYzYRfJxADvs7Y.chbzH1HKL5i",
+      "name": "dasdasd",
+      "id": 2
+    },
+    {
+      "email": "sucvat3366@gmail.com",
+      "password": "$2a$10$D0iKn8CtS0Yg.4ViXZhwS.vCBG0KPGrgwQ7jz9G.h2SJxYrY0sjMy",
+      "name": "hasjdf",
+      "id": 3
+    },
+    {
+      "email": "sucvat3388@gmail.com",
+      "password": "$2a$10$5ZieOVuA87K2aFo3p8E8fuKwO4POMNN4AZ/ka1j.kikETUAB6k9CS",
+      "name": "jhvkzh",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "title": "Iphone",
+      "id": 1
+    },
+    {
+      "title": "Samsung",
+      "id": 2
+    },
+    {
+      "title": "Xiaomi",
+      "id": 3
+    },
+    {
+      "title": "Sony",
+      "id": 5
+    },
+    {
+      "title": "Redmi",
+      "id": 6
+    },
+    {
+      "title": "Bphone",
+      "id": 7
+    },
+    {
+      "title": "Google",
+      "id": 8
+    },
+    {
+      "title": "jkfsda",
+      "id": 9
+    },
+    {
+      "title": "adfadf",
+      "id": 10
+    },
+    {
+      "title": "gsfdgsfdg",
+      "id": 11
+    }
+  ]
+}

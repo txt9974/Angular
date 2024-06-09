@@ -1,0 +1,100 @@
+<app-header></app-header>
+<a href="admin/add"
+  ><button class="bg-yellow-500 mt-5 ml-2 rounded-lg font-bold h-5 w-40">
+    Add products
+  </button></a
+>
+<a href="admin/categories"
+  ><button class="bg-yellow-500 mt-5 ml-2 rounded-lg font-bold h-5 w-40">
+    Add categories
+  </button></a
+>
+<div class="grid grid-cols-3 gap-6 my-6">
+  <div class="student relative">
+    <table class="">
+      <thead>
+        <tr>
+          <th class="border-2 border-blue-500">ID</th>
+          <th class="border-2 border-blue-500">Title</th>
+          <th class="border-2 border-blue-500">Price</th>
+          <th class="border-2 border-blue-500">Description</th>
+          <th class="border-2 border-blue-500">Category</th>
+          <th class="border-2 border-blue-500">Action</th>
+        </tr>
+      </thead>
+
+      @for (student of productData; track student) {
+      <tbody>
+        <tr>
+          <td class="border-2 border-blue-500">{{ student.id }}</td>
+          <td class="border-2 border-blue-500">{{ student.title }}</td>
+          <td class="border-2 border-blue-500">{{ student.price }}</td>
+          <td class="border-2 border-blue-500">{{ student.description }}</td>
+          <td class="border-2 border-blue-500">{{ student.category }}</td>
+          <th class="border-2 border-blue-500 flex">
+            <a href="admin/edit/{{ student.id }}">
+              <button
+                class="bg-blue-600 w-20 mb-2 mt-1 rounded-[6px] text-white font-medium"
+              >
+                Edit
+              </button>
+            </a>
+            <button
+              class="bg-red-500 w-20 mb-1 rounded-[6px] text-white font-medium"
+              (click)="onDel(student.id)"
+              (click)="refresh()"
+            >
+              Delete
+            </button>
+          </th>
+        </tr>
+      </tbody>
+      }
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      @for(category of categoryData; track category){
+      <tbody>
+        <tr>
+          <td>{{ category.id }}</td>
+          <td>{{ category.title }}</td>
+          <td>
+            <a href="admin/categories/{{ category.id }}">
+              <button
+                class="bg-blue-600 w-20 mb-2 mt-1 rounded-[6px] text-white font-medium"
+              >
+                Edit
+              </button>
+            </a>
+            <button
+              class="bg-red-500 w-20 mb-1 rounded-[6px] text-white font-medium"
+              (click)="onDelCate(category.id)"
+              (click)="refresh()"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      }
+    </table>
+  </div>
+</div>
+
+<button
+  (click)="removeToken()"
+  type="button"
+  class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+>
+  Log out
+</button>
+<!-- <button class="" (click)="removeToken()">Log out</button> -->
+<router-outlet></router-outlet>
+<app-footer></app-footer>

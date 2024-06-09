@@ -1,0 +1,92 @@
+<h1 class="font-bold text-4xl">Add</h1>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div>
+    <input
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      type="text"
+      placeholder="Title"
+      formControlName="title"
+    />
+    <div
+      *ngIf="
+        productForm['controls']['title'].dirty &&
+        productForm['controls']['title'].errors
+      "
+    >
+      <small
+        class="text-red-600 font-medium text-sm"
+        *ngIf="productForm['controls']['title'].errors['required']"
+        >Tên không để trống</small
+      >
+      <small
+        class="text-red-600 font-medium text-sm"
+        *ngIf="productForm['controls']['title'].errors['minlength']"
+        >> 6 kí tự</small
+      >
+    </div>
+  </div>
+  <div>
+    <input
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      type="number"
+      placeholder="price"
+      formControlName="price"
+    />
+    <div
+      *ngIf="
+        productForm['controls']['price'].dirty &&
+        productForm['controls']['price'].errors
+      "
+    >
+      <small
+        class="text-red-600 font-medium text-sm"
+        *ngIf="productForm['controls']['price'].errors['min']"
+        >Giá phải lớn hơn 0</small
+      >
+    </div>
+  </div>
+  <div>
+    <input
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      type="text"
+      placeholder="Description"
+      formControlName="description"
+    />
+    <div
+      *ngIf="
+        productForm['controls']['description'].dirty &&
+        productForm['controls']['description'].errors
+      "
+    >
+      <small
+        class="text-red-600 font-medium text-sm"
+        *ngIf="productForm['controls']['description'].errors['required']"
+        >Cần có thêm mô tả</small
+      >
+    </div>
+  </div>
+  <div>
+    <input
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      type="text"
+      placeholder="IMG"
+      formControlName="img"
+    />
+  </div>
+  <div>
+    <select formControlName="category" name="" id="">
+      @for(category of categoryData; track category){
+      <option value="{{ category.id }}">{{ category.title }}</option>
+      }
+    </select>
+  </div>
+
+  <button
+    class="bg-blue-600 w-[184px] h-9 rounded-[6px] text-white font-medium"
+    (click)="refresh()"
+    [disabled]="productForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>

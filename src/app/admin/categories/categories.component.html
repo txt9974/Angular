@@ -1,0 +1,32 @@
+<h1 class="font-bold text-4xl">Add Category</h1>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div>
+    <input
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      type="text"
+      placeholder="Title"
+      formControlName="title"
+    />
+    <div
+      *ngIf="
+        productForm['controls']['title'].dirty &&
+        productForm['controls']['title'].errors
+      "
+    >
+      <small
+        class="text-red-600 font-medium text-sm"
+        *ngIf="productForm['controls']['title'].errors['required']"
+        >Tên không để trống</small
+      >
+    </div>
+  </div>
+
+  <button
+    class="bg-blue-600 w-[184px] h-9 rounded-[6px] text-white font-medium"
+    (click)="refresh()"
+    [disabled]="productForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
