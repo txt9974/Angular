@@ -23,8 +23,9 @@ import { CategoriesComponent } from './admin/categories/categories.component';
 import { EditcateComponent } from './admin/editcate/editcate.component';
 import { SearchComponent } from './components/search/search.component';
 import { CategoryComponent } from './components/category/category.component';
-import { LoaiComponent } from './components/loai/loai.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,7 @@ import { LoaiComponent } from './components/loai/loai.component';
     EditcateComponent,
     SearchComponent,
     CategoryComponent,
-    LoaiComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

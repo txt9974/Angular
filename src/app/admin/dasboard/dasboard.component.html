@@ -1,57 +1,170 @@
 <app-header></app-header>
-<a href="admin/add"
-  ><button class="bg-yellow-500 mt-5 ml-2 rounded-lg font-bold h-5 w-40">
-    Add products
-  </button></a
->
+
 <a href="admin/categories"
   ><button class="bg-yellow-500 mt-5 ml-2 rounded-lg font-bold h-5 w-40">
     Add categories
   </button></a
 >
-<div class="grid grid-cols-3 gap-6 my-6">
-  <div class="student relative">
-    <table class="">
-      <thead>
+<div>
+  <h1 class="font-bold text-4xl">Add</h1>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input
+        class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
+        type="text"
+        placeholder="Title"
+        formControlName="title"
+      />
+      <div
+        *ngIf="
+          productForm['controls']['title'].dirty &&
+          productForm['controls']['title'].errors
+        "
+      >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="productForm['controls']['title'].errors['required']"
+          >Tên không để trống</small
+        >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="productForm['controls']['title'].errors['minlength']"
+          >> 6 kí tự</small
+        >
+      </div>
+    </div>
+    <div>
+      <input
+        class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
+        type="number"
+        placeholder="price"
+        formControlName="price"
+      />
+      <div
+        *ngIf="
+          productForm['controls']['price'].dirty &&
+          productForm['controls']['price'].errors
+        "
+      >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="productForm['controls']['price'].errors['min']"
+          >Giá phải lớn hơn 0</small
+        >
+      </div>
+    </div>
+    <div>
+      <input
+        class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
+        type="text"
+        placeholder="Description"
+        formControlName="description"
+      />
+      <div
+        *ngIf="
+          productForm['controls']['description'].dirty &&
+          productForm['controls']['description'].errors
+        "
+      >
+        <small
+          class="text-red-600 font-medium text-sm"
+          *ngIf="productForm['controls']['description'].errors['required']"
+          >Cần có thêm mô tả</small
+        >
+      </div>
+    </div>
+    <div>
+      <input
+        class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
+        type="text"
+        placeholder="IMG"
+        formControlName="img"
+      />
+    </div>
+    <div>
+      <select
+        class="w-[30%] h-9 border-2 rounded-[5px] border-blue-500"
+        formControlName="category"
+        name=""
+        id=""
+      >
+        @for(category of categoryData; track category){
+        <option value="{{ category.id }}">{{ category.title }}</option>
+        }
+      </select>
+    </div>
+
+    <button
+      class="bg-blue-600 w-[184px] h-9 rounded-[6px] text-white font-medium"
+      (click)="refresh()"
+      [disabled]="productForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <router-outlet class="col-span-1"></router-outlet>
+</div>
+<input type="search" [(ngModel)]="searchText" placeholder="Search" />
+<div class="relative overflow-x-auto">
+  <div class="student relative flex pr-20">
+    <table
+      class="w-full text-left rtl:text-right text-black dark:text-gray-400 border-2 border-black"
+    >
+      <thead
+        class="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700"
+      >
         <tr>
-          <th class="border-2 border-blue-500">ID</th>
-          <th class="border-2 border-blue-500">Title</th>
-          <th class="border-2 border-blue-500">Price</th>
-          <th class="border-2 border-blue-500">Description</th>
-          <th class="border-2 border-blue-500">Category</th>
-          <th class="border-2 border-blue-500">Action</th>
+          <th class="border-2 bg-slate-100 font-bold border-blue-500">Title</th>
+          <th class="border-2 font-bold border-blue-500">Price</th>
+          <th class="border-2 bg-slate-100 font-bold border-blue-500">
+            Description
+          </th>
+          <th class="border-2 font-bold border-blue-500">Category</th>
+          <th class="border-2 bg-slate-100 font-bold border-blue-500">IMG</th>
+          <th class="border-2 font-bold border-blue-500">Action</th>
         </tr>
       </thead>
 
-      @for (student of productData; track student) {
-      <tbody>
-        <tr>
-          <td class="border-2 border-blue-500">{{ student.id }}</td>
-          <td class="border-2 border-blue-500">{{ student.title }}</td>
-          <td class="border-2 border-blue-500">{{ student.price }}</td>
-          <td class="border-2 border-blue-500">{{ student.description }}</td>
-          <td class="border-2 border-blue-500">{{ student.category }}</td>
-          <th class="border-2 border-blue-500 flex">
+      @for (student of productData | filter: searchText; track student) {
+      <tbody class="text-center">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 text-base-4 first-letter: py-4 bg-slate-100 font-bold text-black whitespace-nowrap dark:text-black"
+          >
+            {{ student.title }}
+          </th>
+          <td class="px-6 text-base-4 py-4">{{ student.price }}</td>
+          <td class="px-6 bg-slate-100 text-base-4 py-4">
+            {{ student.description }}
+          </td>
+          <td class="px-6 text-base-4 py-4">{{ student.category }}</td>
+          <td class="px-6 bg-slate-100 text-base-4 py-4">
+            <img class="h-12 w-12" src="{{ student.img }}" alt="Loading" />
+          </td>
+          <td>
             <a href="admin/edit/{{ student.id }}">
               <button
-                class="bg-blue-600 w-20 mb-2 mt-1 rounded-[6px] text-white font-medium"
+                class="bg-blue-600 h-10 w-20 mb-2 mt-1 rounded-[6px] text-white font-medium"
               >
                 Edit
               </button>
             </a>
             <button
-              class="bg-red-500 w-20 mb-1 rounded-[6px] text-white font-medium"
+              class="bg-red-500 h-10 w-20 mb-1 rounded-[6px] text-white font-medium"
               (click)="onDel(student.id)"
               (click)="refresh()"
             >
               Delete
             </button>
-          </th>
+          </td>
         </tr>
       </tbody>
       }
     </table>
-
+  </div>
+  <div class="">
     <table>
       <thead>
         <tr>
@@ -96,5 +209,19 @@
   Log out
 </button>
 <!-- <button class="" (click)="removeToken()">Log out</button> -->
-<router-outlet></router-outlet>
+
 <app-footer></app-footer>
+<!-- <a href="admin/edit/{{ student.id }}">
+  <button
+    class="bg-blue-600 w-20 mb-2 mt-1 rounded-[6px] text-white font-medium"
+  >
+    Edit
+  </button>
+</a>
+<button
+  class="bg-red-500 w-20 mb-1 rounded-[6px] text-white font-medium"
+  (click)="onDel(student.id)"
+  (click)="refresh()"
+>
+  Delete
+</button> -->

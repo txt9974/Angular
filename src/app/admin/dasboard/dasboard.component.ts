@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from 'axios';
 
@@ -11,6 +12,14 @@ import axios from 'axios';
 export class DasboardComponent {
   productData: any;
   categoryData: any;
+  searchText: any;
+  productForm = new FormGroup({
+    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    price: new FormControl(0, [Validators.required, Validators.min(0)]),
+    description: new FormControl('', [Validators.required]),
+    category: new FormControl(''),
+    img: new FormControl(''),
+  });
   url: string = 'http://localhost:3000/product';
   constructor(private http: HttpClient) {}
   async ngOnInit() {
@@ -45,4 +54,18 @@ export class DasboardComponent {
     localStorage.removeItem('accessToken');
     this.router.navigate(['/login']);
   };
+  onSubmit() {
+    if (this.productForm.invalid) {
+      return;
+    }
+    console.log(this.productForm.value);
+    axios
+      .post('http://localhost:3000/product', this.productForm.value)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }

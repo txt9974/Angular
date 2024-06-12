@@ -180,40 +180,35 @@
           </div>
         </div>
       </div>
-      @for(category of categoryData; track category){
+
       <div
-        class="self-stretch flex flex-col items-end justify-start gap-[53px] max-w-full text-8xl-4 mq800:gap-[26px]"
+        class="self-stretch flex flex-col items-end justify-start gap-[53px] text-8xl-4 mq800:gap-[26px]"
       >
         <div
-          class="self-stretch flex flex-row items-start justify-between max-w-full gap-[20px] mq1150:flex-wrap"
+          class="self-stretch flex flex-row-2 items-start justify-between max-w-full gap-[20px]"
         >
           <div class="flex flex-col items-start justify-start pt-1 px-0 pb-0">
             <div class="relative font-semibold mq450:text-3xl">
               Popular products
-            </div>
-          </div>
-          <div class="grid grid-cols-5">
-            <div
-              class="no-underline cursor-pointer mt-2 ml-2 py-2 px-[29px] bg-[transparent] rounded-xl box-border grid grid-col-4 items-start justify-start min-w-[90px] border-[1px] border-solid border-silver-700 hover:bg-steelblue-800 hover:box-border hover:border-[1px] hover:border-solid hover:border-steelblue-200"
-            >
-              <div
-                class="relative text-base-4 font-medium font-poppins text-steelblue-700 text-left inline-block min-w-[78px]"
-              >
-                {{ category.title }}
-              </div>
+              <input
+                type="search"
+                [(ngModel)]="searchText"
+                placeholder="Search"
+              />
             </div>
           </div>
         </div>
+
         <div
           class="self-stretch no-underline flex flex-row items-start justify-start gap-[30.5px] text-mid-1 text-a mq800:gap-[15px]"
         >
           <div
             class="self-stretch flex flex-wrap items-start justify-center gap-[26.6px]"
           >
-            @for (student of productData; track student) {
+            @for (student of productData | filter: searchText; track student) {
             <a
               href="/detail/{{ student.id }}"
-              class="flex-[0.9528] rounded-[19.67px] box-border flex flex-col items-start justify-start py-[21px] px-3 gap-[2px] min-w-[284px] max-w-[309px] border-[1px] border-solid border-silver-600 mq450:flex-1"
+              class="flex-[0.9528] no-underline rounded-[19.67px] box-border flex flex-col items-start justify-start py-[21px] px-3 gap-[2px] min-w-[284px] max-w-[309px] border-[1px] border-solid border-silver-600 mq450:flex-1"
             >
               <div
                 class="self-stretch overflow-hidden flex flex-row items-start justify-end pt-[13.8px] px-[12.9px] bg-cover bg-no-repeat bg-[top]"
@@ -254,7 +249,6 @@
           </div>
         </div>
       </div>
-      }
     </div>
   </div>
 </section>

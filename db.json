@@ -1,64 +1,67 @@
 {
   "product": [
     {
-      "title": "Iphone 6",
+      "title": "Samsung Galaxy",
       "price": 100,
-      "description": "mota ",
-      "category": "Iphone",
+      "description": "samsung",
+      "category": "2",
+      "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-a54-8gb-256gb.png",
       "id": 1
     },
     {
-      "title": "Iphone 8",
-      "price": 150,
-      "description": "mota1",
-      "category": "Iphone",
+      "title": "Googl Pixel 3",
+      "price": 100,
+      "description": "google",
+      "category": 8,
+      "img": "https://i5.walmartimages.com/asr/82c76b14-eddc-4023-ad7f-29f200f121ac.9942167ea8dad9280a1b795086e2d09d.jpeg",
       "id": 2
     },
     {
-      "title": "Redmi note 13",
+      "title": "Iphone 15",
       "price": 1000,
-      "description": "mota2",
-      "category": "Redmi",
-      "img": "https://cdn2.cellphones.com.vn/x/media/catalog/product/x/i/xiaomi-redmi-note-13_7__1_3.png",
+      "description": "iphone",
+      "category": "1",
+      "img": "https://cdn.hoanghamobile.com/i/content/Uploads/2023/12/14/iphone-15-pro-max-natural-titanium-1-hhm.jpg",
       "id": 3
     },
     {
-      "title": "Sony vip pro",
-      "price": 1002,
-      "description": "motaa",
-      "category": "Sony",
+      "title": "Bphone 3",
+      "price": 100,
+      "description": "adsad",
+      "category": "7",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/177768/bphone-3-black-600x600.jpg",
       "id": 4
     },
     {
-      "title": "Redmi note 13",
+      "title": "Xiaomi note 13",
       "price": 100,
-      "description": "redmi",
-      "category": "Redmi",
-      "img": "",
+      "description": "fawfsd",
+      "category": "3",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/309831/xiaomi-redmi-note-13-gold-thumb-600x600.jpg",
       "id": 5
     },
     {
-      "title": "sdasddsa",
-      "price": 123,
-      "description": "dasdasd",
-      "category": "Xiaomi",
-      "img": "",
+      "title": "Iphone 16",
+      "price": 1000,
+      "description": "iphone 16",
+      "category": "1",
+      "img": "https://cdn.mobilecity.vn/mobilecity-vn/images/2024/06/w300/iphone-16-minh-hoa-01-1.jpg.webp",
       "id": 6
     },
     {
-      "title": "adsbdkjasd",
-      "price": 12367,
-      "description": "aldhflasdjf",
-      "category": "Redmi",
-      "img": "https://cdn2.cellphones.com.vn/x/media/catalog/product/x/i/xiaomi-redmi-note-13_7__1_3.png",
+      "title": "Iphone 14",
+      "price": 10,
+      "description": "đà",
+      "category": "1",
+      "img": "https://cdn.hoanghamobile.com/i/preview/Uploads/2022/09/08/2222.png",
       "id": 7
     },
     {
-      "title": "vzxcvzcxv",
-      "price": 123123,
-      "description": "afsdfadsfadf",
-      "category": "1",
-      "img": "adfadf",
+      "title": "Redmi note 12 ",
+      "price": 100,
+      "description": "dfadsf",
+      "category": "6",
+      "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/r/e/redmi-note-12-pro-4g-1-den_2.jpg",
       "id": 8
     }
   ],
@@ -116,18 +119,6 @@
     {
       "title": "Google",
       "id": 8
-    },
-    {
-      "title": "jkfsda",
-      "id": 9
-    },
-    {
-      "title": "adfadf",
-      "id": 10
-    },
-    {
-      "title": "gsfdgsfdg",
-      "id": 11
     }
   ]
 }

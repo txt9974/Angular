@@ -48,12 +48,8 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
-    path: 'categories/:id',
+    path: 'category/:id',
     component: CategoryComponent,
-  },
-  {
-    path: 'loai/:title',
-    component: HomeComponent,
   },
   {
     path: 'admin',

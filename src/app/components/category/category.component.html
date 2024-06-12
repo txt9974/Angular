@@ -1,3 +1,216 @@
 <app-header></app-header>
-<p>category works!</p>
+<div
+  class="self-stretch bg-gray-100 flex flex-row items-start justify-start py-[26px] px-[63px] box-border gap-[15.3px] max-w-full mt-[-1px] text-darkslategray-400 mq450:flex-wrap mq450:justify-center mq450:pl-5 mq450:pr-5 mq450:box-border"
+>
+  <div class="h-[76px] w-[1440px] relative bg-gray-100 hidden max-w-full"></div>
+  <div class="relative font-medium inline-block min-w-[48px] z-[1]">Home</div>
+  <img
+    class="h-6 w-6 relative object-contain min-h-[24px] z-[1]"
+    alt=""
+    src="../../../assets/vuesaxlineararrowdown-4@2x.png"
+  />
+
+  <div class="relative font-medium inline-block min-w-[97px] z-[1]">
+    All category
+  </div>
+  <img
+    class="h-6 w-6 relative object-contain min-h-[24px] z-[1]"
+    alt=""
+    src="../../../assets/vuesaxlineararrowdown-4@2x.png"
+  />
+</div>
+<section
+  class="self-stretch flex flex-row items-start justify-start py-0 pr-16 pl-[61px] box-border max-w-full text-left text-base-1 text-a font-poppins mq800:pl-[30px] mq800:pr-8 mq800:box-border"
+>
+  <div
+    class="flex-1 flex flex-row flex-wrap items-start justify-start gap-[20px] max-w-full"
+  >
+    <div class="w-[315px] flex flex-col items-start justify-start gap-[23px]">
+      <div
+        class="self-stretch flex flex-col items-end justify-start gap-[13px]"
+      >
+        <div
+          class="self-stretch flex flex-row items-start justify-end py-0 pr-px pl-0.5"
+        >
+          <div
+            class="flex-1 flex flex-row items-start justify-between gap-[20px] mq450:flex-wrap"
+          >
+            <div class="relative font-medium inline-block min-w-[90px]">
+              Categories
+            </div>
+            <div
+              class="relative text-[15.1px] text-dimgray-300 inline-block min-w-[42px]"
+            >
+              Reset
+            </div>
+          </div>
+        </div>
+        @for(i of categoryData; track i ){
+        <div
+          class="self-stretch flex flex-col items-start justify-center gap-[12px] text-gray-800"
+        >
+          <div
+            class="self-stretch flex flex-row items-center justify-center gap-[10px] mq450:flex-wrap"
+          >
+            <div
+              class="flex-1 flex flex-row items-center justify-between min-w-[179px] gap-[20px]"
+            >
+              <a
+                href="category/{{ i.id }}"
+                class="w-52 relative inline-block shrink-0"
+              >
+                {{ i.title }}
+              </a>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <div
+        class="self-stretch h-px relative box-border border-t-[1px] border-solid border-silver-300"
+      ></div>
+    </div>
+    <div
+      class="flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[0.1px] box-border gap-[24.1px] min-w-[637px] max-w-full text-mid-1 mq1125:min-w-full"
+    >
+      <div
+        class="self-stretch grid flex-row items-start justify-start gap-[26.6px] grid-cols-[repeat(3,_minmax(232px,_1fr))] mq800:grid-cols-[minmax(232px,_1fr)] mq1125:justify-center mq1125:grid-cols-[repeat(2,_minmax(232px,_401px))]"
+      >
+        @for(product of productData; track product){
+        <div
+          class="rounded-[19.67px] flex flex-row items-start justify-start py-[21px] px-3 border-[1px] border-solid border-silver-600"
+        >
+          <div class="flex-1 flex flex-col items-start justify-start gap-[2px]">
+            <div
+              class="self-stretch overflow-hidden flex flex-row items-start justify-end pt-[13.8px] px-[12.9px] bg-cover bg-no-repeat bg-[top]"
+            >
+              <img
+                class="h-[150px] w-[250px] relative"
+                alt=""
+                src="{{ product.img }}"
+              />
+              <div
+                class="h-[27.5px] w-[27.5px] rounded-103xl-4 bg-lightblue flex flex-row items-center justify-center"
+              >
+                <img
+                  class="h-[14.4px] w-[14.4px] relative"
+                  alt=""
+                  src="../../../assets/vuesaxlinearheart-1.svg"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-row items-start justify-start pt-0 px-0 pb-[13.7px]"
+            >
+              <div class="relative font-medium">{{ product.title }}</div>
+            </div>
+            <div
+              class="flex flex-col items-start justify-start gap-[15.8px] text-darkslategray-100"
+            >
+              <div
+                class="relative font-semibold inline-block min-w-[49px] shrink-0 [debug_commit:1de1738] whitespace-nowrap"
+              >
+                ${{ product.price }}
+              </div>
+              <div
+                class="flex flex-row items-start justify-start gap-[10.8px] shrink-0 [debug_commit:1de1738]"
+              >
+                <img
+                  class="h-[14.6px] w-[14.7px] relative min-h-[15px]"
+                  alt=""
+                  src="../../../assets/vector.svg"
+                />
+
+                <img
+                  class="h-[14.6px] w-[14.7px] relative min-h-[15px]"
+                  alt=""
+                  src="../../../assets/vector-1.svg"
+                />
+
+                <img
+                  class="h-[14.6px] w-[14.7px] relative min-h-[15px]"
+                  alt=""
+                  src="../../../assets/vector-2.svg"
+                />
+
+                <img
+                  class="h-[14.6px] w-[14.7px] relative min-h-[15px]"
+                  alt=""
+                  src="../../../assets/vector-3.svg"
+                />
+
+                <img
+                  class="h-[14.6px] w-[14.7px] relative min-h-[15px]"
+                  alt=""
+                  src="../../../assets/vector-4.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  class="self-stretch flex flex-row items-start justify-start pt-0 pb-9 pr-[63px] pl-[62px] box-border max-w-full text-left text-22xl text-steelblue-100 font-poppins mq800:pl-[31px] mq800:pr-[31px] mq800:box-border"
+>
+  <div
+    class="flex-1 flex flex-row items-start justify-start relative max-w-full"
+  >
+    <img
+      class="h-[417px] flex-1 relative rounded-xl max-w-full overflow-hidden object-cover"
+      loading="lazy"
+      alt=""
+      src="../../../assets/pexelsnaotriponez129208-1@2x.png"
+    />
+
+    <div
+      class="w-[369px] !m-[0] absolute right-[149px] bottom-[63px] flex flex-col items-start justify-start gap-[36px]"
+    >
+      <div
+        class="self-stretch flex flex-row items-start justify-center py-0 pr-[23px] pl-5"
+      >
+        <button
+          class="cursor-pointer [border:none] py-3 px-[26.5px] bg-b rounded-xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-darkgoldenrod"
+        >
+          <div
+            class="relative text-mini-1 font-medium font-poppins text-white text-left inline-block min-w-[81px]"
+          >
+            New laptop
+          </div>
+        </button>
+      </div>
+      <div
+        class="self-stretch flex flex-col items-start justify-start gap-[12px]"
+      >
+        <h1
+          class="m-0 relative text-inherit font-bold font-inherit z-[1] mq800:text-14xl mq450:text-6xl"
+        >
+          Sale up to 50% off
+        </h1>
+        <div
+          class="self-stretch flex flex-row items-start justify-center py-0 px-5 text-lg text-white"
+        >
+          <div class="relative font-medium z-[1]">12 inch hd display</div>
+        </div>
+      </div>
+      <div
+        class="self-stretch flex flex-row items-start justify-center py-0 pr-[23px] pl-5"
+      >
+        <button
+          class="cursor-pointer [border:none] py-3 px-8 bg-b rounded-xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-darkgoldenrod"
+        >
+          <div
+            class="relative text-mini-1 font-medium font-poppins text-white text-left inline-block min-w-[70px]"
+          >
+            Shop now
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <app-footer></app-footer>

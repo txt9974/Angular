@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import axios from 'axios';
 import { Product } from '../../interfaces/product';
@@ -12,6 +12,7 @@ import { Product } from '../../interfaces/product';
 export class HomeComponent implements OnInit {
   productData: any;
   categoryData: any;
+  searchText: any;
   url: string = 'http://localhost:3000/product';
   constructor(private http: HttpClient, private router: ActivatedRoute) {}
   async ngOnInit() {

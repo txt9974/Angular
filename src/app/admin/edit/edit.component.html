@@ -2,7 +2,7 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
     <input
-      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
       type="text"
       placeholder="Title"
       formControlName="title"
@@ -27,7 +27,7 @@
   </div>
   <div>
     <input
-      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
       type="number"
       placeholder="price"
       formControlName="price"
@@ -47,7 +47,7 @@
   </div>
   <div>
     <input
-      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
       type="text"
       placeholder="Description"
       formControlName="description"
@@ -55,16 +55,21 @@
   </div>
   <div>
     <input
-      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none"
+      class="border-2 border-blue-500 rounded-[5px] mb-2 focus:outline-none w-[30%] h-9"
       type="text"
       placeholder="IMG"
       formControlName="img"
     />
   </div>
   <div>
-    <select formControlName="category" name="" id="">
+    <select
+      class="w-[30%] h-9 border-2 border-blue-500 rounded-[5px]"
+      formControlName="category"
+      name=""
+      id=""
+    >
       @for(category of categoryData; track category){
-      <option value="{{ category.title }}">{{ category.title }}</option>
+      <option value="{{ category.id }}">{{ category.title }}</option>
       }
     </select>
   </div>

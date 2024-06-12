@@ -1,3 +1,51 @@
 <app-header></app-header>
-<p></p>
+<div
+  class="self-stretch no-underline flex flex-row items-start justify-start gap-[30.5px] text-mid-1 text-a mq800:gap-[15px]"
+>
+  <div
+    class="self-stretch flex flex-wrap items-start justify-center gap-[26.6px]"
+  >
+    @for (student of products; track student) {
+    <a
+      href="/detail/{{ student.id }}"
+      class="flex-[0.9528] no-underline rounded-[19.67px] box-border flex flex-col items-start justify-start py-[21px] px-3 gap-[2px] min-w-[284px] max-w-[309px] border-[1px] border-solid border-silver-600 mq450:flex-1"
+    >
+      <div
+        class="self-stretch overflow-hidden flex flex-row items-start justify-end pt-[13.8px] px-[12.9px] bg-cover bg-no-repeat bg-[top]"
+      >
+        <img
+          class="w-[230px] h-[170px] relative"
+          loading="lazy"
+          alt=""
+          src="{{ student.img }}"
+        />
+        <div
+          class="h-[27.5px] w-[27.5px] rounded-103xl-4 bg-lightblue flex flex-row items-center justify-center"
+        >
+          <img
+            class="h-[14.4px] w-[14.4px] relative"
+            alt=""
+            src="../../../assets/vuesaxlinearheart-1.svg"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col items-start justify-start gap-[15.8px]">
+        <div class="relative font-medium inline-block min-w-[93px]">
+          {{ student.title }}
+        </div>
+        <div
+          class="relative font-semibold text-darkslategray-100 inline-block min-w-[49px] whitespace-nowrap"
+        >
+          ${{ student.price }}
+        </div>
+        <div
+          class="relative font-semibold text-darkslategray-100 inline-block min-w-[49px] whitespace-nowrap"
+        >
+          {{ student.description }}
+        </div>
+      </div>
+    </a>
+    }
+  </div>
+</div>
 <app-footer></app-footer>
